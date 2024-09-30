@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <Section>
+    <Section id="cadastro">
+        <h1>Cadastre um aluno</h1>
         <form action="./php/cadastro.php" method="post">
             <label for="Aname"> Nome do Aluno</label>
-            <input type="text" id="Aname" name="Aname">
+            <input type="text" id="Aname" name="Aname" required>
             <label for="Aidade">Idade do Aluno</label>
-            <input type="number" id="Aidade" name="Aidade">
+            <input type="number" id="Aidade" name="Aidade" required>
             <label for="Aemail">Email</label>
-            <input type="email" name="Aemail" id="Aemail">
+            <input type="email" name="Aemail" id="Aemail" required>
             <label for="curso">Curso</label>
-            <input type="text" name="curso" id="curso">
-            <button type="submit" id="submit">Inseir dados</button>
+            <input type="text" name="curso" id="curso" required>
+            <button type="submit" id="submit">Cadastrar</button>
         </form>
     </Section>
+    <a href="" type="submit"></a>
 
-    <section>
+    <section id="table">
         <?php
             require "php/db.php";
             
@@ -29,8 +31,8 @@
             $result = $conn->query($sql);
 
             if($result->num_rows>0){
-                echo "<table border='1'>
-                        <tr>
+                echo "<table>
+                        <tr id='Theader'>
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Idade</th>
@@ -45,18 +47,26 @@
                             <th>".$row['idade']."</th>
                             <th>".$row['email']."</th>
                             <th>".$row['curso']."</th>
+                            <th>
+                                <form action='./php/deletar.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir    este aluno?\")'>
+                                    <input type='hidden' name='id' value='".$row['id']."'>
+                                    <button type='submit' style='color=red;'>Excluir</button>
+                                </form>
+                            </th>
                         </tr>";  
                 }
-                echo "</table>;";
+                echo "</table>"; 
             } else {
                 echo "Nenhum dado encontrado";
             }
         ?>
+        <div id="deleteDiv">
         <form action="./php/deletar.php" method="post">
-            <label for="id">Deletar usuario</label>
+            <label for="id">Deletar usuario por ID</label>
             <input type="number" placeholder="Insira o ID do aluno" name="id">
             <button type="submit" id="submit">Confirmar</button>
         </form>
+        </div>
     </section>
 </body>
 </html>
