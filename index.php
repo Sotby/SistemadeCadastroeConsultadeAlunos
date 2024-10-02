@@ -21,8 +21,8 @@
             <button type="submit" id="submit">Cadastrar</button>
         </form>
     </Section>
-    <a href="" type="submit"></a>
-
+    <section id="search">
+    </section>
     <section id="table">
         <?php
             require "php/db.php";
@@ -48,7 +48,7 @@
                             <th>".$row['email']."</th>
                             <th>".$row['curso']."</th>
                             <th>
-                                <form action='./php/deletar.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir    este aluno?\")'>
+                                <form action='./php/deletar.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir este aluno?\")'>
                                     <input type='hidden' name='id' value='".$row['id']."'>
                                     <button type='submit' style='color=red;'>Excluir</button>
                                 </form>
@@ -66,6 +66,16 @@
             <input type="number" placeholder="Insira o ID do aluno" name="id">
             <button type="submit" id="submit">Confirmar</button>
         </form>
+        </div>
+        <div id="search">
+            <form action="php/search.php" method="post">
+                <span>Procurar usuário via ID ou nome</span>
+                <label for="Aname">Nome</label>
+                <input type="text" name="Aname">
+                <label for="id">ID</label>
+                <input type="number" name="id">
+                <button type="submit">Procurar Aluno</button>
+            </form>
         </div>
     </section>
 </body>

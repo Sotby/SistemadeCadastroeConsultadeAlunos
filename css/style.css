@@ -13,10 +13,10 @@ body{
 }
 
 #cadastro{
-    background-color: #0B33C3;
+    background-color: #062699;
     max-width:450px;
     width: 80%;
-    height: 630px;
+    height: fit-content;
     padding: 20px;
     border-radius: 20px;
     margin-right:40px;
@@ -36,7 +36,7 @@ body{
     flex-direction: column;
 }
 #cadastro form input{
-    height: 50px;
+    height: 25px;
     border-radius: 20px;
     border: none;
     background-color: white;
@@ -45,7 +45,7 @@ body{
     color: white;
     font-weight: 700;
     font-size: 24px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 #cadastro form button{
     border: none;
@@ -59,7 +59,6 @@ body{
     width: fit-content;
     margin: 40px auto;
 }
-
 #table{
     background-color: white;
     margin-left: 40px;
@@ -91,8 +90,87 @@ body{
     padding: 10px;
 }
 
+#table div{
+    margin-top: 40px;
+}
 #deleteDiv{
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+}
+
+#cadastroSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    background-color: #062699;
+}
+
+#cadastroSection #error{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+#cadastroSection #sucess{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+}
+#cadastroSection a{
+    height: fit-content;
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    background-color: green;
+    border-radius:5px ;
+}
+
+#searchtable{
+    width: fit-content;
+    padding: 20px;
+    background-color: #062699;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchtable th{
+    background-color: white;
+    padding: 15px;
+}
+#searchtable tr{
+    background-color: black;
+}
+#searchtable table{
+    background-color: #061763;
+    padding: 20px;
+    border-radius: 15px;
+}
+#searchtable a{
+    width: 180px;
+    text-align: center;
+    height: 25px;
+    background-color: #1E9414;
+    color: white;
+    font-size: 16px;
+    text-decoration: underline rgba(255,255,255,0);
+    margin-top: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
